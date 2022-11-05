@@ -1,11 +1,9 @@
-class CreateChirperProfile < ActiveRecord::Migration[6.1]
+class CreateChirperProfiles < ActiveRecord::Migration[6.1]
   def change
-    create_table :chirps do |t|
+    create_table :chirper_profiles do |t|
       t.string :name
       t.integer :chirp_messages_id
-      t.timestamps
-      t.datetime "created_at", precision: 6, null: false
-      t.datetime "updated_at", precision: 6, null: false
+      t.integer :chirp_profile_image
     end
   end
 end 

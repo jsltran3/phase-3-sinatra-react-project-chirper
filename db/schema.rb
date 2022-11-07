@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_07_095127) do
+ActiveRecord::Schema.define(version: 2022_11_07_192430) do
 
   create_table "chirper_profiles", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2022_11_07_095127) do
     t.string "chirp_message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "chirp_profile_id"
   end
 
 end

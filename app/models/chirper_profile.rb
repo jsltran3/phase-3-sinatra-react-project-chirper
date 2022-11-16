@@ -1,4 +1,4 @@
 class ChirperProfile < ActiveRecord::Base
-    has_many :chirps
-
+    has_many :chirps    
+    
 end 

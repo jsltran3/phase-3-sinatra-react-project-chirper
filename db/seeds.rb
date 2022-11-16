@@ -14,7 +14,7 @@ ChirperProfile.create(name: "Joe")
 ChirperProfile.create(name: "Wednesday")
 
 ChirperProfile.all.each do |chirp|
-    Chirps.create(chirp_message_id: chirp.id, chirp_message: "testing")
+    Chirp.create(chirp_profile_id: chirp.id, chirp_message: "testing")
 end 
     
 

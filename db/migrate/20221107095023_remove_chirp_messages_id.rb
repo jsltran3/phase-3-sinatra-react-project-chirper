@@ -3,4 +3,4 @@ class RemoveChirpMessagesId < ActiveRecord::Migration[6.1]
     remove_column :chirps, :chirp_message_id
   end
 end 
-end
+

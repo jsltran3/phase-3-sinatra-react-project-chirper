@@ -1,4 +1,4 @@
-# Phase 3 Project Guidelines
+`# Phase 3 Project Guidelines
 
 ## Learning Goals
 
@@ -29,15 +29,23 @@ For this project, you must:
 - Implement proper front end state management. You should be updating state using a
   setState function after receiving your response from a POST, PATCH, or DELETE 
   request. You should NOT be relying on a GET request to update state. 
+
+  #if you have a post request and there's a redirect, you shouldn't use a get request to refresh. get list once and updating as you go 
+  F spread to an array (added as you go on)
+
 - Use good OO design patterns. You should have separate classes for each of your
   models, and create instance and class methods as necessary. 
+# if you want to do a search you shouldn't connect to the DB. do scope methods instead. 
 - Routes in your application (both client side and back end) should follow RESTful
   conventions.
+  # use include. don't use two states.
+  #user should be coming with all this ttweeet 
 - Use your back end optimally. Pass JSON for related associations to the front 
   end from the back end. You should use active record methods in your controller to grab
   the needed data from your database and provide as JSON to the front end. You
   should NOT be relying on filtering front end state or a separate fetch request to
   retrieve related data.
+  #think about adding stretch goals like other page, but meet MVP
 
 For example, build a todo list application with a React frontend interface and a
 Sinatra backend API, where a user can:

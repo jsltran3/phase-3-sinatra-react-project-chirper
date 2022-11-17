@@ -10,20 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_07_192430) do
+ActiveRecord::Schema.define(version: 2022_11_17_012606) do
 
   create_table "chirper_profiles", force: :cascade do |t|
     t.string "name"
-    t.integer "chirp_messages_id"
     t.integer "chirp_profile_image"
   end
 
   create_table "chirps", force: :cascade do |t|
-    t.string "name"
     t.string "chirp_message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "chirp_profile_id"
+    t.integer "chirper_profile_id"
   end
 
 end

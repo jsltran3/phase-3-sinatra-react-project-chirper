@@ -15,6 +15,11 @@ class ApplicationController < Sinatra::Base
     chirps.to_json(include: [:chirper_profile])
   end
 
+  get '/chirp/:id' do
+    chirps = Chirp.find(params[:id])
+    chirps.to_json(include: [:chirper_profile])
+  end
+
   #done, get profile by id 
   get '/chirper_profile/:id' do
     profiles = ChirperProfile.find(params[:id])
@@ -29,9 +34,10 @@ class ApplicationController < Sinatra::Base
   post '/chirper_profile/' do
     # profiles = ChirperProfile.find(name: params[:name])
     # profiles.all.to_json(include: [:chirps])
-    profiles = ChirperProfile.create(
+    profile = ChirperProfile.create(
       name: params[:name]
     )
+    profiles = ChirperProfile.all.order(:name)
     profiles.to_json(include: [:chirps])
   end
 

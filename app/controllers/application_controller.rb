@@ -32,8 +32,7 @@ class ApplicationController < Sinatra::Base
   # end
 
   post '/chirper_profile/' do
-    # profiles = ChirperProfile.find(name: params[:name])
-    # profiles.all.to_json(include: [:chirps])
+
     profile = ChirperProfile.create(
       name: params[:name]
     )
@@ -64,8 +63,8 @@ class ApplicationController < Sinatra::Base
 
   delete '/chirp/:id' do
     chirps = Chirp.find(params[:id])
-    profiles.destroy
-    profiles.to_json
+    chirps.destroy
+    chirps.to_json
   end 
 
    #done

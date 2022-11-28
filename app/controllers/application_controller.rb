@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
    #done, gets all objects in chirper profile along with their messages 
   get '/chirper_profile' do
     profile = ChirperProfile.all
-    profile.to_json(include: [:chirps], except: [:chirp_profile_image])
+    profile.to_json(include: [:chirps])
   end
 
   #done, gets all chirps
@@ -52,12 +52,14 @@ class ApplicationController < Sinatra::Base
 
   # end
 
-  #tuan
+  
   post '/chirp' do
     chirp = Chirp.create(
       chirp_message: params[:chirp_message],
-      chirper_profile_id: params[:chirper_profile_id]
+      chirper_profile_id: params[:chirper_profile_id],
+      like: params[:like]
     )
+  
     chirp.to_json(include: [:chirper_profiles])
   end
 
@@ -71,10 +73,10 @@ class ApplicationController < Sinatra::Base
   #   # chirps.to_json
   # end
 
-  patch '/chirper_profile/:id' do
-    profiles = ChirperProfile.find(params[:id])
-    profiles.update(name: params[:name])
-    profiles.to_json(include: [:chirps])
+  patch '/chirp/:id' do
+    chirp_like = Chirp.find(params[:id])
+    chirp_like.update(like: params[:like])
+    chirp_like.to_json
   end
 
   #done

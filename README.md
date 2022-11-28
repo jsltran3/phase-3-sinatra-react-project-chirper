@@ -9,6 +9,10 @@ Everyone's heard of the issues surrounding Twitter. The exodus from Twitter duri
 3. You can like or nay the message by clicking on the yay/nay button
 4. Clicking on the "X" will delete the message
 
+To run:
+1. run bundle install
+2. run rake server to start
+
 Link to backend:
 https://github.com/jsltran3/phase-3-sinatra-react-project-chirper
 

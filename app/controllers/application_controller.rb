@@ -15,16 +15,17 @@ class ApplicationController < Sinatra::Base
     chirps.to_json(include: [:chirper_profile])
   end
 
-  get '/chirp/:id' do
-    chirps = Chirp.find(params[:id])
-    chirps.to_json(include: [:chirper_profile])
-  end
+  # get '/chirp/:id' do
+  #   chirps = Chirp.find(params[:id])
+  #   chirps.to_json(include: [:chirper_profile])
+  # end
 
-  #done, get profile by id 
-  get '/chirper_profile/:id' do
-    profiles = ChirperProfile.find(params[:id])
-    profiles.to_json(include: [:chirps])
-  end
+
+  # #done, get profile by id 
+  # get '/chirper_profile/:id' do
+  #   profiles = ChirperProfile.find(params[:id])
+  #   profiles.to_json(include: [:chirps])
+  # end
 
   # post '/chirper_profile/:id' do
   #   profiles = ChirperProfile.find(name: params[:name])
@@ -40,13 +41,35 @@ class ApplicationController < Sinatra::Base
     profiles.to_json(include: [:chirps])
   end
 
-  post '/chirp/' do
+  # post '/chirp' do
+  #   chirp = Chirp.create(
+  #     chirp_message: params[:chirp_message],
+  #     chirper_profile_id: params[:chirper_profile_id]
+  #   )
+  #   # chirps = Chirp.all.order(:chirp_message)
+  #   # chirp.to_json(include: [:chirper_profiles])
+  #   chirps.to_json
+
+  # end
+
+  #tuan
+  post '/chirp' do
     chirp = Chirp.create(
-      chirp_message: params[:chirp_message]
+      chirp_message: params[:chirp_message],
+      chirper_profile_id: params[:chirper_profile_id]
     )
-    chirps = Chirp.all.order(:chirp_message)
-    profiles.to_json(include: [:chirper_profiles])
+    chirp.to_json(include: [:chirper_profiles])
   end
+
+  # post '/chirp' do
+  #   chirp = Chirp.create(
+  #     chirp_message: params[:chirp_message],
+  #     chirper_profile_id: params[:chirper_profile_id]
+  #   )
+  #   # chirps = Chirp.all.order(:chirp_message)
+  #   # chirp.to_json(include: [:chirper_profiles])
+  #   # chirps.to_json
+  # end
 
   patch '/chirper_profile/:id' do
     profiles = ChirperProfile.find(params[:id])

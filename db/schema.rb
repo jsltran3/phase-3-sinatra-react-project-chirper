@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_17_012606) do
+ActiveRecord::Schema.define(version: 2022_11_28_135000) do
 
   create_table "chirper_profiles", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2022_11_17_012606) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "chirper_profile_id"
+    t.boolean "like"
   end
 
 end

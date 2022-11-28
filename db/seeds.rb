@@ -6,11 +6,11 @@ ChirperProfile.create(name: "Blue")
 ChirperProfile.create(name: "Joe")
 ChirperProfile.create(name: "Wednesday")
 
-ChirperProfile.all.each do |chirp|
-        Chirp.create(
-            chirper_profile_id: chirp.id, 
-            chirp_message: "testing")
-end 
+# ChirperProfile.all.each do |chirp|
+#         Chirp.create(
+#             chirper_profile_id: chirp.id, 
+#             chirp_message: "testing")
+# end 
 
 # ChirperProfile.all.map do |chirp|
 #     Chirp.create(

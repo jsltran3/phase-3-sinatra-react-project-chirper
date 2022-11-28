@@ -24,3 +24,4 @@ ChirperProfile.create(name: "Wednesday")
  
 
 puts "✅ Done seeding!"
+

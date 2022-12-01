@@ -33,34 +33,25 @@ class ApplicationController < Sinatra::Base
   # end
 
   post '/chirper_profile/' do
-
     profile = ChirperProfile.create(
       name: params[:name]
     )
     profiles = ChirperProfile.all.order(:name)
     profiles.to_json(include: [:chirps])
   end
-
-  # post '/chirp' do
-  #   chirp = Chirp.create(
-  #     chirp_message: params[:chirp_message],
-  #     chirper_profile_id: params[:chirper_profile_id]
-  #   )
-  #   # chirps = Chirp.all.order(:chirp_message)
-  #   # chirp.to_json(include: [:chirper_profiles])
-  #   chirps.to_json
-
-  # end
-
   
   post '/chirp' do
+    # binding.pry
     chirp = Chirp.create(
       chirp_message: params[:chirp_message],
       chirper_profile_id: params[:chirper_profile_id],
       like: params[:like]
     )
   
-    chirp.to_json(include: [:chirper_profiles])
+    chirp.to_json(include: :chirper_profile)
+    # binding.pry
+    # chirp.to_json
+
   end
 
   # post '/chirp' do

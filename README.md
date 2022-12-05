@@ -1,4 +1,4 @@
-# Phase 3 Project: Chirper
+# Phase 3 Project Backend: Chirper
 
 # Description
 Everyone's heard of the issues surrounding Twitter. The exodus from Twitter during the recent aquisition is cuasing a lot of users to flee. Fortunately, there's a solution: welcome Chirper, the ground breaking app to change social media and provide safe haven for Twitter users. 
@@ -14,9 +14,13 @@ Everyone's heard of the issues surrounding Twitter. The exodus from Twitter duri
 2. Run: bbundle exec rake db:migrate
 3. Run: bundle exec rake server
 
-Link to backend:
-https://github.com/jsltran3/phase-3-sinatra-react-project-chirper
-
-
-Link to the front end:
+# Links
 https://github.com/jsltran3/phase-3-sinatra-react-project-chirper-frontend
+
+# SQL Table Relationships
+- Each 'Chirp" class instance within the '/chirps' has the 'belongs to' Active Record relationship to the 'Chirper Profile' class
+- Each 'Chirper Profile" class instance within the '/chirper_profile' has the 'has many' Active Record relationship to the 'Chirps' class
+
+# Goals
+- The ability for the user to create, read, and delete Chirper Profiles
+- Underneath every Chirper User will include the ability to create new Chirps, see the list, toggle the "Like" heart button, as well as delete the Chirps

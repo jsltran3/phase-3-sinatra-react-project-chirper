@@ -11,8 +11,9 @@ Everyone's heard of the issues surrounding Twitter. The exodus from Twitter duri
 
 # Installation Instructions
 1. Run: bundle install
-2. Run: bbundle exec rake db:migrate
-3. Run: bundle exec rake server
+2. Run: bundle exec rake db:migrate
+3. Run: bundle exec rake db:seed
+3. Lastly, run: bundle exec rake server
 
 # Links
 https://github.com/jsltran3/phase-3-sinatra-react-project-chirper-frontend

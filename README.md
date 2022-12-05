@@ -1,4 +1,4 @@
-# phase-3-sinatra-react-project-chirper-frontend
+# Phase 3 Project: Chirper
 
 # Description
 Everyone's heard of the issues surrounding Twitter. The exodus from Twitter during the recent aquisition is cuasing a lot of users to flee. Fortunately, there's a solution: welcome Chirper, the ground breaking app to change social media and provide safe haven for Twitter users. 
@@ -9,9 +9,10 @@ Everyone's heard of the issues surrounding Twitter. The exodus from Twitter duri
 3. You can like or nay the message by clicking on the yay/nay button
 4. Clicking on the "X" will delete the message
 
-To run:
-1. run bundle install
-2. run rake server to start
+# Installation Instructions
+1. Run: bundle install
+2. Run: bbundle exec rake db:migrate
+3. Run: bundle exec rake server
 
 Link to backend:
 https://github.com/jsltran3/phase-3-sinatra-react-project-chirper
